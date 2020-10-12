@@ -1,12 +1,22 @@
 class CoffeeMachine:
 
-    def __init__(self):
-        # Supplies at start
-        self.water = 400  # ml of water
-        self.milk = 540  # ml of milk
-        self.coffee_beans = 120  # g of coffee beans
-        self.disposable_cups = 9
-        self.money = 550  # $
+    def __init__(self, water, milk, coffee_beans, disposable_cups, money):
+        self.water = water  # ml of water
+        self.milk = milk  # ml of milk
+        self.coffee_beans = coffee_beans  # g of coffee beans
+        self.disposable_cups = disposable_cups
+        self.money = money  # $
+
+    def __str__(self):
+        print_value = f"""
+                    The coffee machine has:
+                    {self.water} of water
+                    {self.milk} of milk
+                    {self.coffee_beans} of coffee beans
+                    {self.disposable_cups} of disposable cups
+                    ${self.money} of money"""
+        return print_value
+
 
     def buy_coffee(self):
         type_coffee = input("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu: \n")
@@ -66,14 +76,6 @@ class CoffeeMachine:
         print(f'I gave you ${money_now}')
         self.money = 0
 
-    def display_supplies(self):
-        print(f'The coffee machine has:')
-        print(f'{self.water} of water')
-        print(f'{self.milk} of milk')
-        print(f'{self.coffee_beans} of coffee beans')
-        print(f'{self.disposable_cups} of disposable cups')
-        print(f'${self.money} of money')
-
     def take_action(self, action):
         if action != "exit":
             if action == "buy":
@@ -83,11 +85,13 @@ class CoffeeMachine:
             elif action == "take":
                 self.take_money(self.money)
             elif action == "remaining":
-                self.display_supplies()
+                print(self)
 
 
 def main():
-    coffee = CoffeeMachine()
+    # water = 400 ml of water, milk = 540 ml of milk, coffee_beans = 120 g of coffee beans, disposable_cups = 9,
+    # money = 550  $
+    coffee = CoffeeMachine(water=400, milk=540, coffee_beans=120, disposable_cups=9, money=550)
     action = ""
 
     while action != "exit":
