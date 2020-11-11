@@ -16,6 +16,8 @@ The right solution to this problem is to store the current state of the machine.
 Objective
 
 Your final task is to refactor the program. Make it so that you can communicate with the coffee machine through a single method. Good luck!
+
+
 Example
 
 Your coffee machine should have the same initial resources as in the example (400 ml of water, 540 ml of milk, 120 g of coffee beans, 9 disposable cups, $550 in cash).
