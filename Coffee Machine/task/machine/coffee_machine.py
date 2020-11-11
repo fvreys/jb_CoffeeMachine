@@ -1,4 +1,5 @@
 class CoffeeMachine:
+    # TO DO: 1/ Data structure for coffee content 2/ Simplify with it the method 'buy_coffee'
 
     def __init__(self, water, milk, coffee_beans, disposable_cups, money):
         self.water = water  # ml of water
